@@ -3,6 +3,7 @@ from flask import Flask, render_template, jsonify, request
 #jsonify para convertir archivos a json y viceversa.
 from flask_cors import CORS
 #from sqlalchemy import Sqlalchemy
+import pymysql #ESTE ME LO DEJó instalar, veamos si sirve..  
 #cors: recursos de origen cruzado
 from flask_marshmallow import Marshmallow
 
