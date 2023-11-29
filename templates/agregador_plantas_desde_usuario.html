@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Formulario con  Vue.js para sumar plantas por el usuario</title>
+</head>
+<body>
+<main>Aquí podés colaborar con nosotras, agregando la info de la planta que conozcas. Si no sabés algo, poné "no sé" y listo! Después chequeamos!</main>
+<div id="app">
+  <form @submit.prevent="submitForm">
+    <label for="nombre"> Nombre de la planta:</label>
+    <input type="text" id="nombre" v-model="formulario.nombre">
+    <br><br>
+    <label for="nombre_cientifico">Sabés el nombre científico? (si/no):</label>
+    <input type="text" id="nombre_cientifico" v-model="formulario.nombre_cientifico">
+    <br><br>
+    <label for="cant_agua">Cantidad de agua que necesita </label>
+    <input type="text" id="cantidad_de_agua" v-model="formulario.cantidad_de_agua">
+    <br><br>
+    <label for="nombre"> Cantidad de sol que necesita:</label>
+    <input type="text" id="cantidad_de_sol" v-model="formulario.cantidad_de_sol">
+    <br><br>
+    <label for="nombre">Tierra o maceta?</label>
+    <input type="text" id="suelo" v-model="formulario.suelo">
+    <br><br>
+
+    <button type="submit">Enviar</button>
+  </form>
+</div>
+
+<!-- Importar Vue.js -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      formulario: {
+        nombre: '',
+        nombre_cientifico: '',
+        cantidad_de_agua: '',
+        cantidad_de_sol: '',
+        suelo: ''
+      }
+    },
+    methods: {
+      submitForm() {
+        // Convertir los datos del formulario a un objeto JSON
+        const datosJSON = JSON.stringify(this.formulario);
+        console.log('Datos en formato JSON:', datosJSON);
+
+        // Aquí puedes hacer lo que quieras con los datos JSON, como enviarlos a un servidor
+        // Por ejemplo: fetch('url_del_servidor', { method: 'POST', body: datosJSON });
+
+        // También puedes resetear el formulario después de enviar los datos
+        this.formulario = {
+            nombre: '',
+            nombre_cientifico: '',
+            cantidad_de_agua: '',
+            cantidad_de_sol: '',
+            suelo: '',
+        };
+      }
+    }
+  });
+</script>
+
+</body>
+</html>
