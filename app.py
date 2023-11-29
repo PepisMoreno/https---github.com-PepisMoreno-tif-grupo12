@@ -2,8 +2,8 @@ from flask import Flask, render_template, jsonify, request
 #request sirve para recolectar la data que viene del formulario
 #jsonify para convertir archivos a json y viceversa.
 from flask_cors import CORS
+#from sqlalchemy import Sqlalchemy
 #cors: recursos de origen cruzado
-from sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 
 app = Flask(__name__)
