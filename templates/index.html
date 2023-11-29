@@ -1,11 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Identificador de Plantas</title>
+  <!--CSS Bootstrap-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <!--Barra de navegación-->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Replantear</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contacto</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
 </head>
 <body>
-    <p>Hola a todos</p>
+  <h2>Obtené información acerca de tu planta</h2>
+      <p>Solo tenes que escribir el nombre de tu planta y elegir entre las siguientes consultas: </p>
+        <ul>
+          <li>Luz - para obtener información sobre la iluminación que necesita tu planta</li>
+          <li>Agua - para saber cuánto riego necesita.</li>
+          <li>Suelo - si queres saber si tu planta es para maceta o tierra</li>
+          <li>Ubicacion - Si queres saber si es un a planta de interior o exterior</li>
+        </ul><br>
+        <div class="login">
+          <form action="" method="post"> <!--en action hay que poner la ruta de la función "consulta" --ver porque metodo post-->
+            <label for="inputNombre">Nombre de la planta:</label><br>
+            <input type="text" id="inputNombre" name="nombre" placeholder="Nombre" required><br>
+      
+            <label for="consulta">¿Cuál es tu consulta?:</label><br>
+            <input type="text" id="consulta"name="consulta" placeholder="Tu consulta" required><br>
+            <br>
+            <button type="submit" class="btn btn-outline-success">Enviar consulta</button>
+          </form>
+        </div>
+        
+  
 </body>
 </html>
