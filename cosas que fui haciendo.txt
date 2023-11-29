@@ -1,0 +1,67 @@
+instalar y desinstalar pips por todos lados (sqlalchemy, marshmallow, flask, jinja, etc etc)
+revisar de que el scripts esté activado
+revisar que hayamos guardado los cambios antes de correr la página.
+
+instale pymysql como librería en lugar de sqlalchemy
+
+me miré cómo importar una base de datos del video de cari
+
+y acá le pedí a chat gpt ayuda para conectar la base de datos con python:
+
+
+
+cómo conectar una base de datos de mysql con python sin usar sqlalchemy
+
+ChatGPT
+Para conectar una base de datos MySQL con Python sin usar SQLAlchemy, puedes utilizar el módulo pymysql. Aquí te muestro un ejemplo básico de cómo puedes hacerlo:
+
+Asegúrate de tener pymysql instalado:
+bash
+Copy code
+pip install pymysql
+Conecta tu aplicación Python a la base de datos MySQL:
+python
+Copy code
+import pymysql
+
+# Establece la conexión a la base de datos
+conn = pymysql.connect(
+    host='localhost',  # Cambia a la dirección de tu servidor MySQL si es diferente
+    user='usuario',
+    password='contraseña',
+    database='nombre_basedatos'  # Nombre de tu base de datos
+)
+
+# Crear un cursor para ejecutar consultas SQL
+cursor = conn.cursor()
+
+# Ejemplo: Crear una tabla
+cursor.execute('''CREATE TABLE IF NOT EXISTS empleados (
+                    id INT AUTO_INCREMENT PRIMARY KEY,
+                    nombre VARCHAR(100),
+                    edad INT,
+                    salario FLOAT
+                 )''')
+
+# Ejemplo: Insertar datos
+cursor.execute('''INSERT INTO empleados (nombre, edad, salario)
+                  VALUES ('Juan', 30, 50000),
+                         ('María', 28, 45000),
+                         ('Carlos', 35, 60000)''')
+
+# Confirmar los cambios
+conn.commit()
+
+# Ejemplo: Consulta SELECT
+cursor.execute("SELECT * FROM empleados")
+filas = cursor.fetchall()
+
+for fila in filas:
+    print(fila)
+
+# Cerrar el cursor y la conexión
+cursor.close()
+conn.close()
+En este ejemplo, se establece una conexión a la base de datos MySQL usando pymysql.connect(), se ejecutan consultas SQL para crear una tabla, insertar datos, realizar una consulta SELECT y mostrar los resultados.
+
+Recuerda reemplazar los valores de host, user, password y database con la información correspondiente a tu configuración de MySQL. Además, es importante manejar las excepciones que puedan surgir durante la conexión y las consultas a la base de datos para tener un código robusto y seguro.
