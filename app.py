@@ -2,8 +2,9 @@ from flask import Flask, render_template, jsonify, request
 #request sirve para recolectar la data que viene del formulario
 #jsonify para convertir archivos a json y viceversa.
 from flask_cors import CORS
-#from sqlalchemy import Sqlalchemy
-import pymysql #ESTE ME LO DEJó instalar, veamos si sirve..  
+import sqlalchemy
+import pymysql #ESTE ME LO DEJó instalar, veamos si sirve..
+"""este no venía con este archivo pero lo puse en reemplazo del sqlalchemy, que no me dejaba utilizar""" 
 #cors: recursos de origen cruzado
 from flask_marshmallow import Marshmallow
 
@@ -15,3 +16,4 @@ CORS(app)
 def home():
     return render_template("index.html")
 #ver cómo hacer para que app.py también te pueda derivar a la html agregador_plantas_desde_usuario.html
+
