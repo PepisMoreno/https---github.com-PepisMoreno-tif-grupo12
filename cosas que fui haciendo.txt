@@ -65,3 +65,9 @@ conn.close()
 En este ejemplo, se establece una conexión a la base de datos MySQL usando pymysql.connect(), se ejecutan consultas SQL para crear una tabla, insertar datos, realizar una consulta SELECT y mostrar los resultados.
 
 Recuerda reemplazar los valores de host, user, password y database con la información correspondiente a tu configuración de MySQL. Además, es importante manejar las excepciones que puedan surgir durante la conexión y las consultas a la base de datos para tener un código robusto y seguro.
+
+-probé instalar pip flask-sqlalchemy, sqlalchemy, me rebota todo. 
+solo me deja poner import sqlalchemy pero sin el from. funciona igual???
+luego los comandos no me los reconoce y tooooodo es una cadena de "no favores": al no reconocer a sqlalchemy no reconoce el bd, al no estar definida la bd no se conecta a la base de datos, al no poder conectar a la base de datos no puede continuar con los problemas. 
+Lo "bueno" es que seguro hay solución (alguna otra librería que no sea sqlalchemy o un modo de instalarlo que lo reconozca). Si eso está, quedaría finalmente saber cómo es el URI de la base de datos que armó cari e ir reemplazando el código perteneciente a Productos (la base de datos que pusieron de ejemplo) con nuestra base de plantas, cambiando las categorías (atributos: nombre, nombre científico, riego, luz, etc) para que luego pueda hacerse los 4 métodos que se piden. 
+SI SALE ESO... aunque aún no haya CRUD... para mí esta re COCINAD.
