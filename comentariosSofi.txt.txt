@@ -24,3 +24,10 @@ Correr en terminal python app.py
 PRUEBO DE MIL MANERAS CONECTAR CON MYSQL. no sé
 PRuebo con el video de MArcela Cerda: ok, no me tira errores
 pero no corre el bd
+
+ERROR:
+"IntegrityError
+Exception raised when the relational integrity of 
+the database is affected, e.g. a foreign key check fails.
+This error is a DBAPI Error and originates from the 
+database driver (DBAPI), not SQLAlchemy itself."
