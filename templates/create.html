@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dejanos tu plantita en nuestra página</title>
+</head>
+<body>
+    <!--formulario para realizar una petición, para q el usuario ingrese su planta y se agregue a la bd-->
+<form method= "POST" action="/store" enctype="multipart/form-data">
+
+    <label for="nom">Nombre de tu planta</label>
+    <input type="text" name="nom" for="nom">
+
+    <label for="nomcient">Nombre científico (si lo sabés)</label>
+    <input type="text" name="nomcient" for="nomcient">
+
+    <label for="foto">Acá podés dejarnos foto de tu planta!</label>
+    <input type="file" name="foto" for="foto">
+
+    <input type="submit" value="Agregar nueva planta">
+
+</form>
+</body>
+</html>
