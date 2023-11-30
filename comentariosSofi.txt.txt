@@ -18,3 +18,8 @@ marshmallow Y sqlalchemy
 
 __ en app.py     sql= "INSERT INTO plantas (nombre_comun, nombre_científico, foto) VALUES (%s, %s, %s)";
 le cambie las S por s
+
+Correr en terminal python app.py
+
+PRUEBO DE MIL MANERAS CONECTAR CON MYSQL. no sé
+PRuebo con el video de MArcela Cerda
