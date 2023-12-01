@@ -32,13 +32,13 @@ ma=Marshmallow(app)   #crea el objeto ma de de la clase Marshmallow
 class Planta(db.Model):   # la clase Planta hereda de db.Model    
     id=db.Column(db.Integer, primary_key=True)   #define los campos de la tabla
     nombre_comun=db.Column(db.String(100))
-    nombre_cientifico=db.Column(db.Integer)
+    nombre_científico=db.Column(db.Integer)
     foto=db.Column(db.String(400))
 
 #crea el  constructor de la clase (id porque lo crea sola mysql por ser auto_incremento)
-    def __init__(self,nombre_comun, nombre_cientifico, foto):   
+    def __init__(self,nombre_comun, nombre_científico, foto):   
         self.nombre_comun=nombre_comun   
-        self.nombre_cientifico=nombre_cientifico
+        self.nombre_cientifíco=nombre_científico
         self.foto=foto
 
     #  si hay que crear la otra tabla sería..
@@ -98,13 +98,13 @@ def delete_planta(id):
 def create_producto():
     #print(request.json)  # request.json contiene el json que envio el cliente
     nombre_comun=request.json['nombre_comun']
-    nombre_cientifico=request.json['nombre_cientifico']
+    nombre_científico=request.json['nombre_científico']
     foto=request.files['foto']
      #Guardamos la imagen en el servidor
     filename = secure_filename(foto.filename)
     foto.save(filename)
 
-    new_planta=Planta(nombre_comun,nombre_cientifico,foto)
+    new_planta=Planta(nombre_comun,nombre_científico,foto)
     db.session.add(new_planta)
     db.session.commit()
     return planta_schema.jsonify(new_planta)
@@ -115,12 +115,12 @@ def update_planta(id):
     planta=Planta.query.get(id)
  
     nombre_comun=request.json['nombre_comun']
-    nombre_cientifico=request.json['nombre_cientifico']
+    nombre_científico=request.json['nombre_científico']
     foto=request.json['foto']
 
 
     planta.nombre_comun=nombre_comun
-    planta.nombre_cientifico=nombre_cientifico
+    planta.nombre_científico=nombre_científico
     planta.foto=foto
 
 
