@@ -16,7 +16,8 @@ def obtener_conexion():
     return pymysql.connect(host="localhost",
                            user="root",
                            password="root",
-                           db="plantas_bd")
+                           db="plantas_bd",
+                           port="3306")
 
 #creamos otro decorador, para q el usuario ingrese info a la BD
 @app.route("/agregador") #declaramos la ruta /agregador
@@ -30,7 +31,7 @@ def store():
     nombrecient = request.form('nomcient')
     fotoplanta = request.files('nomfoto')
 
-    sql= "INSERT INTO plantas (nombre_comun, nombre_científico, foto) VALUES (%S, %S, %S)";
+    sql= "INSERT INTO plantas (nombre_comun, nombre_científico, luz, riego, suelo, ubicación, exterior_o_interior) VALUES (%S, %S, %S)";
     datos=(nombrePlanta,nombrecient,fotoplanta.filename)
     conn= pymysql.connect()
     cursor= conn.cursor()

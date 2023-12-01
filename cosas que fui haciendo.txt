@@ -71,3 +71,21 @@ solo me deja poner import sqlalchemy pero sin el from. funciona igual???
 luego los comandos no me los reconoce y tooooodo es una cadena de "no favores": al no reconocer a sqlalchemy no reconoce el bd, al no estar definida la bd no se conecta a la base de datos, al no poder conectar a la base de datos no puede continuar con los problemas. 
 Lo "bueno" es que seguro hay solución (alguna otra librería que no sea sqlalchemy o un modo de instalarlo que lo reconozca). Si eso está, quedaría finalmente saber cómo es el URI de la base de datos que armó cari e ir reemplazando el código perteneciente a Productos (la base de datos que pusieron de ejemplo) con nuestra base de plantas, cambiando las categorías (atributos: nombre, nombre científico, riego, luz, etc) para que luego pueda hacerse los 4 métodos que se piden. 
 SI SALE ESO... aunque aún no haya CRUD... para mí esta re COCINAD.
+
+
+ACTUALIZOOO
+estuve probando las siguientes cosas:
+por un lado, me metí en este video: https://www.youtube.com/watch?v=RgLzqIFZg8s
+que es muy simple pero permite ver si la conexión con la base de datos se puede hacer o no. Dejé el programita en python armado para probar desde ahí, se llama para_probar_conexión_mysql_y_python.py 
+Hay que cambiar nomas el nombre de la base de datos, usuario y contraseña si corresponde, puerto ... 
+
+por otro lado, busqué con mi amigo chat gpt y me pasó el código que está en app3.py
+
+Luego agarré el código que está en el tutorial de la primera parte de la api rest y fui copiando parte por parte aquí. Es el archivo appcontodocombinado.py 
+Entiendo que el problema central está en la base de datos. Porque es como que conecta pero por algun motivo el modelo, la primary key y toda esa cosa no funcionan. habría que volver a probar con otra base de datos.
+Pero el resto, todos los métodos supuestamente dan lo que tienen que dar.  
+No hay ningún problema en el documento. 
+No me corre en flask, ya que al no encontrar  esto no puede seguir: 
+    raise sa_exc.ArgumentError(
+sqlalchemy.exc.ArgumentError: Mapper Mapper[Planta(planta)] could not assemble any primary key columns for mapped table 'planta'
+hay algo entre el model, el modo en el que se presenta la tabla que no me cierra ( en algunos lados ponen en el python primary key, en otros no...)
