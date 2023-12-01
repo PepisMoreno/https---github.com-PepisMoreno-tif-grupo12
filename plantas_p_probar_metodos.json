@@ -1,0 +1,22 @@
+{
+    "plantas": [
+      {
+        "id": 1,
+        "nombre_comun": "Rosa",
+        "nombre_cientifico": "Rosa sp.",
+        "foto": false
+      },
+      {
+        "id": 2,
+        "nombre": "Orquídea",
+        "nombre_cientifico": "Orchidaceae",
+        "foto": false
+      },
+      {
+        "id": 3,
+        "nombre": "Cactus",
+        "nombre_cientifico": "Cactaceae",
+        "foto": false
+      }
+      ]
+}
