@@ -49,8 +49,8 @@ class Planta(db.Model):   # la clase Planta hereda de db.Model
     #        self.suelo=suelo
     #        self.plaga=plaga
 
-with app.app_context():
-        db.create_all()  # aqui crea todas las tablas
+#with app.app_context():
+#        db.create_all()  # aqui crea todas las tablas
 #
 #Campos en tabla
 class PlantaSchema(ma.Schema):
